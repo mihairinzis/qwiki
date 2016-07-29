@@ -1,0 +1,34 @@
+{
+  "name": "qwiki",
+  "version": "0.0.1",
+  "description": "wiki stuff",
+  "license" : "GPL-3.0",
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "2.7.0",
+    "dexie": "1.4.1",
+    "mocha": "2.5.3",
+    "chai": "3.5.0",
+    "browserify": "13.0.1",
+    "ncp": "2.0.0",
+    "mkdirp": "0.5.1",
+    "rimraf": "2.5.3",
+    "node-fetch": "1.5.3",
+    "eslint": "3.0.1"
+  },
+  "scripts": {
+    "clean": "rimraf dist && mkdirp dist/chrome-qwiki",
+    "copyall": "ncp src dist/chrome-qwiki && rimraf dist/chrome-qwiki/js/*",
+    "lint": "eslint src/js",
+    "test": "mocha ./tests/tests.js",
+    "uglify_background": "uglifyjs dist/chrome-qwiki/js/background.js -c -m -o dist/chrome-qwiki/js/background.js",
+    "uglify_content": "uglifyjs dist/chrome-qwiki/js/content.js -c -m -o dist/chrome-qwiki/js/content.js",
+    "uglify_options": "uglifyjs dist/chrome-qwiki/js/options-page.js -c -m -o dist/chrome-qwiki/js/options-page.js",
+    "uglify": "npm run uglify_background && npm run uglify_content && npm run uglify_options",
+    "browserify_background": "browserify src/js/chrome-background.js -o dist/chrome-qwiki/js/background.js",
+    "browserify_content": "browserify src/js/content.js -o dist/chrome-qwiki/js/content.js",
+    "browserify_options": "browserify src/js/options-page.js -o dist/chrome-qwiki/js/options-page.js",
+    "browserify": "npm run browserify_background && npm run browserify_content && npm run browserify_options",
+    "build_chrome": "npm run clean && npm run copyall && npm run browserify"
+  }
+}

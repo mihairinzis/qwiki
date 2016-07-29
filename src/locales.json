@@ -1,0 +1,137 @@
+{
+  "ar": {
+    "language_translation": "العربية"
+  },
+  "bg": {
+    "language_translation": "Български"
+  },
+  "bn": {
+    "language_translation": "বাংলা"
+  },
+  "ca": {
+    "language_translation": "Català"
+  },
+  "ceb": {
+    "language_translation": "Cebuano"
+  },
+  "cz": {
+    "language_translation": "Čeština"
+  },
+  "da": {
+    "language_translation": "Dansk"
+  },
+  "de": {
+    "language_translation": "Deutsch"
+  },
+  "en": {
+    "language_translation": "English",
+    "language": "Language",
+    "read_more": "Read more",
+    "default_article_title": "Mind your own business",
+    "default_article_content": "<p>Qwiki is looking for articles.</p>",
+    "enabled_for_site": "Enabled for current site",
+    "enabled_for_newtab": "Enabled for new tab page only",
+    "alignment": "Alignment",
+    "left": "Left",
+    "middle": "Middle",
+    "right": "Right",
+    "bookmark": "Bookmark this article",
+    "close": "Close"
+  },
+  "eo": {
+    "language_translation": "Esperanto"
+  },
+  "es": {
+    "language_translation": "Español"
+  },
+  "fa": {
+    "language_translation": "فارسی"
+  },
+  "fi": {
+    "language_translation": "Suomi"
+  },
+  "fr": {
+    "language_translation": "Français"
+  },
+  "hi": {
+    "language_translation": "हिन्दी"
+  },
+  "hu": {
+    "language_translation": "Magyar"
+  },
+  "id": {
+    "language_translation": "Bahasa Indonesia"
+  },
+  "it": {
+    "language_translation": "Italiano"
+  },
+  "ja": {
+    "language_translation": "日本語"
+  },
+  "ko": {
+    "language_translation": "韓國語"
+  },
+  "ms": {
+    "language_translation": "Bahasa Melayu"
+  },
+  "nl": {
+    "language_translation": "Nederlands"
+  },
+  "no": {
+    "language_translation": "Norsk (Bokmål)"
+  },
+  "pa": {
+    "language_translation": "ਪੰਜਾਬੀ"
+  },
+  "pl": {
+    "language_translation": "Polski"
+  },
+  "pt": {
+    "language_translation": "Português"
+  },
+  "ro": {
+    "language_translation": "Română",
+    "language": "Limba",
+    "read_more": "Citește mai mult",
+    "default_article_title": "Mind your own business",
+    "default_article_content": "<p>Qwiki caută articole.</p>",
+    "enabled_for_site": "Disponibil pentru site-ul curent",
+    "enabled_for_newtab": "Disponibil doar pentru pagina filă nouă",
+    "alignment": "Aliniere",
+    "left": "Stânga",
+    "middle": "Mijloc",
+    "right": "Dreapta",
+    "bookmark": "Adaugă acest articol la favorite",
+    "close": "Închide"
+  },
+  "ru": {
+    "language_translation": "Pусский"
+  },
+  "sh": {
+    "language_translation": "Српскохрватски"
+  },
+  "sk": {
+    "language_translation": "Slovenčina"
+  },
+  "sr": {
+    "language_translation": "Српски"
+  },
+  "sv": {
+    "language_translation": "Svenska"
+  },
+  "tr": {
+    "language_translation": "Türkçe"
+  },
+  "uk": {
+    "language_translation": "Українська"
+  },
+  "vi": {
+    "language_translation": "Tiếng Việt"
+  },
+  "war": {
+    "language_translation": "Winaray"
+  },
+  "zh": {
+    "language_translation": "中文"
+  }
+}
