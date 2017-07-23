@@ -83,6 +83,7 @@ background = (function() {
         sendMessageToCurrentTab('articleReady', {
           article: results[0],
           alignment: qwiki.getOptions().getAlignment(),
+          showPicturesInNewTab: qwiki.getOptions().getShowPicturesInNewTab(),
           isNewTab: results[1],
           bookmarkTitle: qwiki.getOptions().locales.message('bookmark'),
           closeTitle: qwiki.getOptions().locales.message('close')

@@ -32,9 +32,11 @@ module.exports = function ArticleFetcher(language, categories, category) {
         params = {
           format: 'json',
           action: 'query',
-          prop: 'extracts',
+          prop: 'extracts|pageimages',
           exlimit: 'max',
           exintro: '',
+          piprop:'original',
+          pilimit: 'max',
           generator: category === categories.RANDOM_CATEGORY ?
             'random' : 'categorymembers'
         };
@@ -97,6 +99,7 @@ module.exports = function ArticleFetcher(language, categories, category) {
       content: articleContent.innerHTML,
       category: category.metacategory,
       title: jsonArticle.title,
+      imageurl: jsonArticle.original ? jsonArticle.original.source : null,
       views: 0
     } : null;
   }

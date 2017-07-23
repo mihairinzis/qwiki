@@ -137,3 +137,19 @@
 #bookmark-image img {
     opacity: 0.4;
 }
+
+/* =Image
+-------------------------------------------------------------- */
+#qwiki-image {
+    height: 450px;
+    left: 20%;
+    opacity: 0.6;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+}
+
+#qwiki-image:hover {
+    opacity: 1;
+}

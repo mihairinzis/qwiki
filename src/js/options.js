@@ -41,7 +41,8 @@ module.exports = function Options(locales, categories, sites, changeLanguage) {
 
   const storage = new (require('./storage'))('OPTIONS', {
     extensionVersion: 0,
-    alignment: this.ALIGN.RIGHT
+    alignment: this.ALIGN.RIGHT,
+    showPicturesInNewTab: true
   });
 
   this.getExtensionVersion = () => storage.get('extensionVersion');
@@ -57,5 +58,9 @@ module.exports = function Options(locales, categories, sites, changeLanguage) {
   this.getAlignment = () => storage.get('alignment');
   this.setAlignment = (alignment) => {
     storage.set({alignment: alignment});
+  };
+  this.getShowPicturesInNewTab = () => storage.get('showPicturesInNewTab');
+  this.setShowPicturesInNewTab = (showPicturesInNewTab) => {
+      storage.set({showPicturesInNewTab: showPicturesInNewTab});
   };
 };

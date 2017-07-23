@@ -137,6 +137,13 @@
     }).catch(() => {
       // no active tab, ignore
     });
+    const showPicturesInNewTab = createCheckbox(
+      'show-pictures-in-new-tab', message('pictures_in_newtab')
+    );
+    showPicturesInNewTab.checkbox.checked = options.getShowPicturesInNewTab();
+    showPicturesInNewTab.checkbox.addEventListener('change', () => {
+       options.setShowPicturesInNewTab(showPicturesInNewTab.checkbox.checked);
+    });
   }
 
   function showAlignment() {

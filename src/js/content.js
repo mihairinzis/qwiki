@@ -48,9 +48,9 @@
           middleRight = (98 - width) / 2,
           leftRight = 99 - width;
 
-    qwikiFrame.style.width = smallScreen || isNewTab ? '98%' : width + '%';
+    qwikiFrame.style.width = isNewTab || smallScreen ? '98%' : width + '%';
     qwikiFrame.style.height = isNewTab ? 'auto' : height + 'px';
-    if (isNewTab || smallScreen || alignment === 'right') {
+    if (smallScreen || alignment === 'right') {
       qwikiFrame.style.right = '1%';
     } else if (alignment === 'left') {
       qwikiFrame.style.right = leftRight + '%';
@@ -60,17 +60,28 @@
     }
   }
 
-  qwikiFrame.onmouseleave = function() {
+  qwikiFrame.onmouseleave = () => {
     if (!isNewTab) {
       qwikiFrame.className = 'qwiki-hidden';
     }
   };
 
-  qwikiFrame.onmouseover = function() {
+  qwikiFrame.onmouseover = () => {
     if (!isNewTab) {
       qwikiFrame.className = 'qwiki-visible';
     }
   };
+
+  function displayImage(showPicturesInNewTab, imageurl, articleurl) {
+    if (isNewTab && showPicturesInNewTab && imageurl) {
+      const image = createElement({
+        tagName: 'img',
+        attributes: {src: imageurl, id: 'qwiki-image'}
+      });
+      image.onclick = () => window.location.href = articleurl;
+      document.body.appendChild(image);
+    }
+  }
 
   function displayArticle(article) {
     if (!isNewTab) {
@@ -126,6 +137,8 @@
     if (request.method === 'articleReady') {
       isNewTab = request.data.isNewTab;
       resizeQwikiFrame(request.data.alignment);
+        displayImage(request.data.showPicturesInNewTab, request.data.article.imageurl,
+                     request.data.article.url);
       displayArticle(request.data.article);
       displayButtons(request.data.bookmarkTitle, request.data.closeTitle);
     }
