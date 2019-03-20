@@ -28,6 +28,7 @@ module.exports = function Url() {
   'use strict';
 
   const CHROME_NEW_TAB_URL = 'chrome://newtab/';
+  const FIREFOX_NEW_TAB_TITLE = 'New Tab';
 
   /**
    * @function
@@ -56,7 +57,7 @@ module.exports = function Url() {
   this.getActiveTabUrl = () => this.getActiveTab()
     .then(tab => ({
       url: getRemoteUrlRoot(tab.url),
-      isNewTab: tab.url === CHROME_NEW_TAB_URL
+      isNewTab: tab.url === CHROME_NEW_TAB_URL || tab.title === FIREFOX_NEW_TAB_TITLE
     }));
 
   /**

@@ -127,16 +127,15 @@ module.exports = function Categories(db, language) {
    * @param newCategories {array} of title and metaCategory to persist
    */
   function saveNewCategories(newCategories) {
-    return db.transaction('rw', db.categories, () => {
       newCategories.forEach(category => {
-        db.categories.put({
+        db.categories.add({
           title: category.title,
           metacategory: category.metaCategory,
           continue: '',
           gcmcontinue: '',
           views: 0
         });
-      });
+      return Promise.resolve();
     });
   }
 

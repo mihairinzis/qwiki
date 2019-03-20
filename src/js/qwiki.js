@@ -36,13 +36,9 @@ module.exports = function Qwiki(extensionVersion) {
         options = new (require('./options'))(locales, categories,
                                              sites, changeLanguage);
 
-  db.version(2).stores({
+  db.version(3).stores({
     categories: '&title,metacategory,continue,gcmcontinue,views',
     articles: '&pageid,title,category,content,views,imageurl'
-  });
-
-  Dexie.Promise.on('error', (err) => {
-    console.error('Uncaught error: ' + err);
   });
 
   /**
