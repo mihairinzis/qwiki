@@ -54,9 +54,15 @@ background = (function() {
 
   function createFolderAndBookmark(folderTitle) {
     window.chrome.bookmarks.getTree((tree) => {
-      const bookmarkBarId = tree[0].children[0].id;
+      let bookmarkToolbar = tree[0].children.find(folder => folder.id === 'toolbar_____');
+      bookmarkToolbar = bookmarkToolbar ? bookmarkToolbar : tree[0].children[0];
+      const bookmarkFolder =  bookmarkToolbar.children.find(folder => folder.title === folderTitle);
+      if (bookmarkFolder) {
+        createBookmark(bookmarkFolder.id);
+        return;
+      }
       window.chrome.bookmarks.create({
-        parentId: bookmarkBarId,
+        parentId: bookmarkToolbar.id,
         index: 0,
         title: folderTitle
       }, (newFolder) => {

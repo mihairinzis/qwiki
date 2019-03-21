@@ -28,9 +28,10 @@
   const createElement = require('./element');
   let isNewTab = false,
       smallScreen = false;
+  const runtime = typeof browser !== 'undefined' ? browser.runtime : chrome.runtime;
 
   function sendToBackground(method, data) {
-    window.chrome.runtime.sendMessage({method: method, data: data});
+    runtime.sendMessage({method: method, data: data});
   }
 
   const qwikiFrame = createElement({
@@ -133,7 +134,7 @@
     });
   }
 
-  window.chrome.runtime.onMessage.addListener((request) => {
+  runtime.onMessage.addListener((request) => {
     if (request.method === 'articleReady') {
       isNewTab = request.data.isNewTab;
       resizeQwikiFrame(request.data.alignment);

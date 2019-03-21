@@ -34,7 +34,7 @@ body {
 }
 body * {
     font-family: 'LatoWebLight';
-    font-size: 20px;
+    font-size: 16px;
 }
 #qwiki-options {
     width: 100%;
@@ -103,7 +103,13 @@ input[type=range] {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
-input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-track {
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    border: none;
+}
+input[type=range]::-moz-range-track {
     width: 100%;
     height: 1px;
     background: #ddd;
@@ -114,8 +120,8 @@ input[type=range]::-webkit-slider-thumb {
     -moz-appearance: none;
     border: 1px solid #bdc3c7;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
     background: #FFF;
     margin-top: -9px;
 }

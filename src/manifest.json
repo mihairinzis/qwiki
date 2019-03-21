@@ -10,7 +10,8 @@
     "*.*", "wikidata/*.*", "fonts/*.*", "img/*.*"
   ],
   "content_scripts": [{
-    "matches": ["https://*/*", "http://*/*"],
+    "all_frames": true,
+    "matches": ["<all_urls>"],
     "js": ["js/content.js"],
     "css": ["css/bubble.css"],
     "run_at": "document_end"
